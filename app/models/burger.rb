@@ -1,6 +1,7 @@
 class Burger < ApplicationRecord
-    belongs_to :restaurants
+    belongs_to :restaurant
 
     validates :name, presence: true
 
+    
 end
