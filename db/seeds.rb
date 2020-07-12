@@ -9,9 +9,13 @@
 
 restaurant = Restaurant.create(name: "Zinburger", location: "Paramus, NJ")
 restaurant_two = Restaurant.create(name: "Bobby's Burger Palace", location: "Paramus, NJ")
+restaurant_three = Restaurant.create(name: "Shake Shack", location: "Paramus, NJ")
 
 burger = Burger.create(restaurant_id: 1, name: "Zinburger", description: "Manchego Cheese, Zinfandel Braised Onions, Lettuce & Mayo", price: 12.00)
 burger_two = Burger.create(restaurant_id: 1, name: "Samburger", description: "Applewood Smoked Bacon, American Cheese, Lettuce & 1,000 Island", price: 12.50)
 
 burger_three = Burger.create(restaurant_id: 2, name: "Bobby Blue Bacon", description: "Blue cheese, bacon, lettuce, tomato", price: 9.75)
 burger_four = Burger.create(restaurant_id: 2, name: "L.A.", description: "Avocado relish, watercress, cheddar cheese, tomato", price: 9.50)
+
+burger_five = Burger.create(restaurant_id: 3, name: "Shack Stack", description: "Cheeseburger and a ’Shroom Burger topped with lettuce, tomato, ShackSauce", price: 10.79)
+burger_six = Burger.create(restaurant_id: 3, name: "Chick’n Shack", description: "Crispy chicken breast topped with lettuce, pickles and buttermilk herb mayo", price: 7.19)
