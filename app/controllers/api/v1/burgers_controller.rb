@@ -8,9 +8,9 @@ class Api::V1::BurgersController < ApplicationController
     end
 
     def create
-        @burger = Burger.new(burger_params)
+        @burger = @restaurant.burgers.new(burger_params)
         if @burger.save
-            render json: @burger
+            render json: @restaurant
         else    
             render json: {error: @burger.errors.full_messages}, status: :unprocessable_entity
         end
