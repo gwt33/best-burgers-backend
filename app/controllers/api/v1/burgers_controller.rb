@@ -1,5 +1,5 @@
 class Api::V1::BurgersController < ApplicationController
-    before_action :set_burger, only: [:show, :update, :destroy]
+    before_action :set_restaurant
 
     def index
         @burgers = Burger.all
@@ -7,10 +7,10 @@ class Api::V1::BurgersController < ApplicationController
         render json: @burgers
     end
 
-    def create
-        @burger = Burger.new(burger_params)
+    def create        
+        @burger = @restaurant.burgers.new(burger_params)
         if @burger.save
-            render json: @burger, status: :created
+            render json: @restaurant
         else    
             render json: {error: @burger.errors.full_messages}, status: :unprocessable_entity
         end
@@ -34,8 +34,8 @@ class Api::V1::BurgersController < ApplicationController
 
     private
 
-    def set_burger
-        @burger = Burger.find(params[:id])
+    def set_restaurant
+        @restaurant = Restaurant.find(params[:restaurant_id])
     end
 
     def burger_params

@@ -1,5 +1,5 @@
 class Api::V1::RestaurantsController < ApplicationController
-    before_action :set_restaurant, only: [:show, :update, :destroy]
+    # before_action :set_restaurant, only: [:show, :update, :destroy]
 
     def index
         @restaurants = Restaurant.all
@@ -10,7 +10,7 @@ class Api::V1::RestaurantsController < ApplicationController
     def create
         @restaurant = Restaurant.new(restaurant_params)
         if @restaurant.save
-            render json: @restaurant, include: :burgers, status: created
+            render json: @restaurant
         else    
             render json: {error: @restaurant.errors.full_messages}, status: :unprocessable_entity
         end
