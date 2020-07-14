@@ -10,7 +10,7 @@ class Api::V1::RestaurantsController < ApplicationController
     def create
         @restaurant = Restaurant.new(restaurant_params)
         if @restaurant.save
-            render json: @restaurant
+            render json: @restaurant, include: :burgers, status: created
         else    
             render json: {error: @restaurant.errors.full_messages}, status: :unprocessable_entity
         end

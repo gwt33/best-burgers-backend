@@ -1,24 +1,11 @@
-# README
+# Burgers React App - Backend
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the Ruby on Rails API for my React Burgers App. After cloning, cd into the file and run these commands to start the server:
 
-Things you may want to cover:
+$ bundle install
 
-* Ruby version
+$ rake db:migrate
 
-* System dependencies
+$ rake db:seed
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+$ rails s
